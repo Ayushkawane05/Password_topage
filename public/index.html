@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Secure Login</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(120deg, #f8cdda, #1e90ff, #d4fc79);
+      background-size: 200% 200%;
+      animation: gradientBG 10s ease infinite;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .login-form {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 35px 30px;
+      border-radius: 16px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+      width: 100%;
+      max-width: 380px;
+      transition: transform 0.2s ease-in-out;
+      backdrop-filter: blur(10px);
+    }
+
+    .login-form:hover {
+      transform: scale(1.02);
+    }
+
+    .login-form h2 {
+      margin-bottom: 24px;
+      font-weight: 700;
+      color: #222;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 15px;
+      color: #444;
+    }
+
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #aaa;
+      border-radius: 8px;
+      font-size: 16px;
+      background-color: #fdfdfd;
+      transition: box-shadow 0.3s, border-color 0.3s;
+    }
+
+    input[type="password"]:focus {
+      border-color: #007BFF;
+      outline: none;
+      box-shadow: 0 0 6px rgba(0, 123, 255, 0.4);
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(to right, #00b09b, #96c93d);
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 17px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    button:hover {
+      background: linear-gradient(to right, #007bff, #00c6ff);
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 480px) {
+      .login-form {
+        padding: 30px 20px;
+        max-width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <form class="login-form" action="/check" method="POST">
+    <h2>Secure Login</h2>
+    <label for="password">Enter Password:</label>
+    <input type="password" id="password" name="password" required>
+    <button type="submit">Login</button>
+  </form>
+</body>
+</html>
